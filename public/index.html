@@ -1,17 +1,42 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <svg aria-hidden="true" style="
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        display: none;
+      " version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <symbol id="success-icon" viewBox="0 0 32 32">
+        <path fillRule="evenodd" clipRule="evenodd"
+            d="M16 32c-8.837 0-16-7.163-16-16s7.163-16 16-16c8.837 0 16 7.163 16 16s-7.163 16-16 16zM10.294 14.467l-2.294 2.218 5.814 5.315 10.186-9.897-2.165-2.103-8.070 7.841-3.472-3.373z"
+            fill="#50E3C2" />
+      </symbol>
+      <symbol id="basket-icon" viewBox="0 0 24 24">
+        <path fillRule="evenodd" clipRule="evenodd"
+            d="M12 4a4 4 0 014 4h4v10a2 2 0 01-2 2H6a2 2 0 01-2-2V8h4a4 4 0 014-4zm6 6H6v7a1 1 0 001 1h10a1 1 0 001-1v-7zm-6-4a2 2 0 00-2 2h4a2 2 0 00-2-2z"
+            fill="currentColor" />
+      </symbol>
+    </defs>
+  </svg>
+</body>
+
 </html>
