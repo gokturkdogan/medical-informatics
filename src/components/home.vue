@@ -1,0 +1,91 @@
+<template>
+    <div class="home">
+        <div class="home__information">
+            <h5 class="home__title">Health Care Uygulamasına Hoşgeldiniz</h5>
+            <h1 class="home__largeTitle">Sağlık Takibi</h1>
+            <p class="home__description">Spor aktivitelerinizi ve vucüdunuzun sağlığını takip edin.</p>
+            <div class="home__buttons">
+                <a class="home__button" href=""><span>Sağlık</span></a>
+                <a class="home__button" href=""><span>Antrenman</span></a>
+            </div>
+        </div>
+        <div class="home__image">
+            <img src="../assets/images/figures/homeBanner.png" alt="figure" class="home__figure">
+        </div>
+    </div>
+</template>
+<script>
+export default {
+    name: "Home",
+};
+</script>
+<style lang="scss" scoped>
+.home {
+    background-image: linear-gradient(to right, #8360c3, #2ebf91);
+    display: flex;
+    justify-content: space-between;
+    padding: 207px 300px;
+
+    &__information {
+        padding-top: 100px;
+    }
+
+    &__title {
+        color: #f7f5f5;
+        text-align: left;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    &__largeTitle {
+        color: #fff;
+        text-align: left;
+        font-size: 65px;
+        font-weight: 700;
+    }
+
+    &__description {
+        color: #f7f5f5;
+        text-align: left;
+        line-height: 1.6;
+        letter-spacing: .3px;
+        margin-bottom: 30px;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__button {
+        background: linear-gradient(-45deg, #cf11da 0%, #3482fd 100%);
+        border: none;
+        box-shadow: 0 2px 4px rgb(4 6 6 / 15%);
+        text-decoration: none;
+        color: #fff;
+        min-width: 150px;
+        border-radius: 4px;
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1.1px;
+        text-align: center;
+        padding: 15px 20px;
+        outline: none;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+            opacity: 70%;
+        }
+    }
+
+    &__image {
+        width: 635px;
+    }
+
+    &__figure {
+        width: 100%;
+    }
+}
+</style>
