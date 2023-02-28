@@ -5,7 +5,7 @@
             <h1 class="home__largeTitle">Sağlık Takibi</h1>
             <p class="home__description">Spor aktivitelerinizi ve vucüdunuzun sağlığını takip edin.</p>
             <div class="home__buttons">
-                <a class="home__button" href=""><span>Sağlık</span></a>
+                <router-link class="home__button" to="/health" tag="a">Sağlık</router-link>
                 <a class="home__button" href=""><span>Antrenman</span></a>
             </div>
         </div>
@@ -21,10 +21,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 .home {
-    background-image: linear-gradient(to right, #8360c3, #2ebf91);
+    background-image: linear-gradient(-45deg, #cf11da 0%, #3482fd 100%);
     display: flex;
     justify-content: space-between;
-    padding: 207px 300px;
+    padding: 34vh 20vw;
 
     &__information {
         padding-top: 100px;

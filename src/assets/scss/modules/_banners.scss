@@ -1,0 +1,13 @@
+.banner {
+    background-image: url('../images/figures/subBanner.png');
+    background-size: cover;
+    padding: 200px 0;
+    text-align: center;
+
+    &__title {
+        color: #fff;
+        font-size: 53px;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+}
