@@ -28,11 +28,11 @@ export default {
 .notify {
     padding: 10px;
     max-width: 400px;
-    background: rgb(243, 243, 243);
+    background: $modalBg;
     position: fixed;
     top: 100px;
     right: 0;
-    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 30%);
+    box-shadow: 0 8px 16px 0 $boxShadow1;
 
     &__content {
         display: flex;

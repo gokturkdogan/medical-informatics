@@ -45,11 +45,11 @@ export default {
     z-index: 1;
     display: flex;
     justify-content: center;
-    background-color: white;
+    background-color: $white;
     position: fixed;
     width: 100%;
     padding: 20px 0;
-    box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+    box-shadow: 0 -6px 10px 5px $black;
 
     &__logoLink {
         text-decoration: none;
@@ -71,7 +71,7 @@ export default {
         font-size: 25px;
         margin-left: 10px;
         text-decoration: none;
-        color: black;
+        color: $black;
     }
 
     &__navBar {
@@ -100,12 +100,12 @@ export default {
 
     &__link {
         font-weight: 600;
-        color: black;
+        color: $black;
         text-decoration: none;
         transition: 0.3s;
 
         &:hover {
-            color: #9B33E7
+            color: $themePurple
         }
     }
 
@@ -119,21 +119,21 @@ export default {
         margin-top: 40px;
         padding: 0;
         height: fit-content;
-        background-color: white;
+        background-color: $white;
     }
 
     &__dropLink {
         text-decoration: none;
         font-weight: 600;
-        color: #8E8D8D;
+        color: $dropLinkFontColor;
         display: block;
         padding: 10px 20px;
         width: 200px;
-        border-bottom: 1px solid #c7c6c6;
+        border-bottom: 1px solid $dropLinkBorder;
         transition: 0.5s;
 
         &:hover {
-            background-color: #F7F7FB;
+            background-color: $dropLinkHoverBg;
             padding: 10px 25px;
         }
     }

@@ -31,7 +31,8 @@
                             </div>
                         </div>
                         <div class="health__view">
-                            <div :class="{ '-active': isHeightModal.isOpen }" class="health__statsItem" @click="openHeightModal()">
+                            <div :class="{ '-active': isHeightModal.isOpen }" class="health__statsItem"
+                                @click="openHeightModal()">
                                 <svg-icon class="icon" width="70" height="70" fill="#FFFFFF" icon-name="height-icon" />
                                 <h4 class="health__statsItemTitle">
                                     Boyunuz
@@ -48,7 +49,8 @@
                             </div>
                         </div>
                         <div class="health__view">
-                            <div :class="{ '-active': isBodyFatModal.isOpen }" class="health__statsItem" @click="openBodyFatModal()">
+                            <div :class="{ '-active': isBodyFatModal.isOpen }" class="health__statsItem"
+                                @click="openBodyFatModal()">
                                 <svg-icon width="70" height="70" fill="#FFFFFF" icon-name="fat-icon" />
                                 <h4 class="health__statsItemTitle">
                                     Yağ Oranınız
@@ -66,7 +68,7 @@
                         </div>
                     </div>
                     <div class="health__statsOveralLine">
-                        <div v-if="bodyMass.bodyMassRate < 18.9" class="health__statsItem mass thin" @click="openModal()">
+                        <div v-if="bodyMass.bodyMassRate < 18.99" class="health__statsItem mass thin" @click="openModal()">
                             <svg-icon width="70" height="70" fill="#FFFFFF" icon-name="plus-icon-red" />
                             <h4 class="health__statsItemTitle">
                                 Vücut Kitle İndeksiniz
@@ -74,7 +76,7 @@
                             <p class="health__statsItemDesc">Girmiş olduğunuz veriler hesaplanarak bulunur. (ZAYIF)</p>
                             <span class="health__statsItemValue">{{ parseFloat(bodyMass.bodyMassRate).toFixed(1) }}</span>
                         </div>
-                        <div v-if="bodyMass.bodyMassRate < 24.9 && bodyMass.bodyMassRate > 19"
+                        <div v-if="bodyMass.bodyMassRate < 24.99 && bodyMass.bodyMassRate > 19"
                             class="health__statsItem mass normal" @click="openModal()">
                             <svg-icon width="70" height="70" fill="#FFFFFF" icon-name="plus-icon-green" />
                             <h4 class="health__statsItemTitle">
@@ -83,7 +85,7 @@
                             <p class="health__statsItemDesc">Girmiş olduğunuz veriler hesaplanarak bulunur. (NORMAL)</p>
                             <span class="health__statsItemValue">{{ parseFloat(bodyMass.bodyMassRate).toFixed(1) }}</span>
                         </div>
-                        <div v-if="bodyMass.bodyMassRate < 29.9 && bodyMass.bodyMassRate > 25"
+                        <div v-if="bodyMass.bodyMassRate < 29.99 && bodyMass.bodyMassRate > 25"
                             class="health__statsItem mass slightlyFat" @click="openModal()">
                             <svg-icon width="70" height="70" fill="#FFFFFF" icon-name="plus-icon-yellow" />
                             <h4 class="health__statsItemTitle">
@@ -93,7 +95,7 @@
                             </p>
                             <span class="health__statsItemValue">{{ parseFloat(bodyMass.bodyMassRate).toFixed(1) }}</span>
                         </div>
-                        <div v-if="bodyMass.bodyMassRate < 34.9 && bodyMass.bodyMassRate > 30"
+                        <div v-if="bodyMass.bodyMassRate < 34.99 && bodyMass.bodyMassRate > 30"
                             class="health__statsItem mass obese" @click="openModal()">
                             <svg-icon width="70" height="70" fill="#FFFFFF" icon-name="plus-icon-orange" />
                             <h4 class="health__statsItemTitle">
@@ -229,17 +231,17 @@ export default {
     }
 
     &__statsItem {
-        border: 1px solid #887AD9;
+        border: 1px solid $itemBorder1;
         text-align: center;
         padding: 25px 30px;
         max-width: 100%;
         cursor: pointer;
         border-radius: 15px;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        box-shadow: #32325d40 0px 6px 12px -2px, #0000004d 0px 3px 7px -3px;
 
         &:hover {
-            background: linear-gradient(-45deg, #cf11da 0%, #3482fd 100%);
-            color: white;
+            background: linear-gradient(-45deg, $linearPurple 0%, $linearBlue 100%);
+            color: $white;
         }
     }
 
@@ -269,15 +271,15 @@ export default {
 
     &__updateModal {
         margin-top: 20px;
-        background: rgb(243, 243, 243);
+        background: $modalBg;
         height: 100px;
         position: relative;
         border-radius: 20px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        box-shadow: #00000059 0px 5px 15px;
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 1px solid #887AD9;
+        border: 1px solid $itemBorder1;
     }
 
     &__updateInput {
@@ -293,45 +295,77 @@ export default {
         height: fit-content;
         cursor: pointer;
         margin-left: 5px;
-        color: white;
-        background: #887AD9;
+        color: $white;
+        background: linear-gradient(-45deg, $linearPurple 0%, $linearBlue 100%);
         padding: 10px 20px;
         border-radius: 10px;
         border: none;
         font-size: 16px;
 
         &:hover {
-            background: #3482fd;
+            background: $linearBlue;
         }
     }
 
     .mass {
         width: 700px;
         border-width: 3px;
+
     }
 
     .thin {
-        border-color: #ff0000;
+        border-color: $unHealthy;
+        box-shadow: 0 0 .2rem $white,
+            0 0 .1rem $white,
+            0 0 1rem $unHealthy,
+            0 0 0.5rem $unHealthy,
+            0 0 1.8rem $unHealthy,
+            inset 0 0 0.3rem $unHealthy;
     }
 
     .normal {
-        border-color: #008000;
+        border-color: $healthy;
+        box-shadow: 0 0 .2rem $white,
+            0 0 .1rem $white,
+            0 0 1rem $healthy,
+            0 0 0.5rem $healthy,
+            0 0 1.8rem $healthy,
+            inset 0 0 0.3rem $healthy;
     }
 
     .slightlyFat {
-        border-color: #e0e03c;
+        border-color: $slightlyFat;
+        box-shadow: 0 0 .2rem $white,
+            0 0 .1rem $white,
+            0 0 1rem $slightlyFat,
+            0 0 0.5rem $slightlyFat,
+            0 0 1.8rem $slightlyFat,
+            inset 0 0 0.3rem $slightlyFat;
     }
 
     .obese {
-        border-color: #ffa600;
+        border-color: $obese;
+        box-shadow: 0 0 .2rem $white,
+            0 0 .1rem $white,
+            0 0 1rem $obese,
+            0 0 0.5rem $obese,
+            0 0 1.8rem $obese,
+            inset 0 0 0.3rem $obese;
     }
 
     .extremelyObese {
-        border-color: red;
+        border-color: $unHealthy;
+        box-shadow: 0 0 .2rem $white,
+            0 0 .1rem $white,
+            0 0 1rem $unHealthy,
+            0 0 0.5rem $unHealthy,
+            0 0 1.8rem $unHealthy,
+            inset 0 0 0.3rem $unHealthy;
     }
 
     .-active {
-        background: linear-gradient(-45deg, #cf11da 0%, #3482fd 100%);
-        color: white;
+        background: linear-gradient(-45deg, $linearPurple 0%, $linearBlue 100%);
+        color: $white;
     }
-}</style>
+}
+</style>
