@@ -21,7 +21,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .home {
-    background-image: linear-gradient(-45deg, #cf11da 0%, #3482fd 100%);
+    background-image: linear-gradient(-45deg, $linearPurple 0%, $linearBlue 100%);
     display: flex;
     justify-content: space-between;
     padding: 34vh 20vw;
@@ -31,21 +31,21 @@ export default {
     }
 
     &__title {
-        color: #f7f5f5;
+        color: $white;
         text-align: left;
         font-size: 22px;
         font-weight: 600;
     }
 
     &__largeTitle {
-        color: #fff;
+        color: $white;
         text-align: left;
         font-size: 65px;
         font-weight: 700;
     }
 
     &__description {
-        color: #f7f5f5;
+        color: $white;
         text-align: left;
         line-height: 1.6;
         letter-spacing: .3px;
@@ -58,11 +58,11 @@ export default {
     }
 
     &__button {
-        background: linear-gradient(-45deg, #cf11da 0%, #3482fd 100%);
+        background: linear-gradient(-45deg, $linearPurple 0%, $linearBlue 100%);
         border: none;
-        box-shadow: 0 2px 4px rgb(4 6 6 / 15%);
+        box-shadow: 0 2px 4px $boxShadow1;
         text-decoration: none;
-        color: #fff;
+        color: $white;
         min-width: 150px;
         border-radius: 4px;
         display: inline-block;
@@ -73,7 +73,6 @@ export default {
         padding: 15px 20px;
         outline: none;
         cursor: pointer;
-        transition: 0.3s;
 
         &:hover {
             opacity: 70%;

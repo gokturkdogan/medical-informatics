@@ -39,7 +39,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .footer {
-    background-color: #333333;
+    background-color: $footerBg;
     padding: 10vh 15vw;
     margin-top: 200px;
 
@@ -67,12 +67,12 @@ export default {
         font-size: 25px;
         margin-left: 10px;
         text-decoration: none;
-        color: white;
+        color: $white;
     }
 
     &__list {
         list-style-type: none;
-        color: white;
+        color: $white;
 
         li {
             margin-top: 20px;
@@ -89,7 +89,7 @@ export default {
     }
 
     &__link {
-        background: linear-gradient(-45deg, #cf11da 0%, #3482fd 100%);
+        background: linear-gradient(-45deg, $linearPurple 0%, $linearBlue 100%);
         padding: 20px;
         border-radius: 55px;
 
