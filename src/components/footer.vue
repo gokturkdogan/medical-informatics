@@ -94,7 +94,7 @@ export default {
         border-radius: 55px;
 
         &:hover {
-            opacity: 70%;
+            @include unhealthy-shadow
         }
     }
 }

@@ -200,9 +200,9 @@ export default {
         font-size: 28px;
         letter-spacing: 2.8px;
         line-height: 2;
-        color: #323232;
+        color: $footerBg;
         font-weight: 700;
-        border-bottom: 3px solid #887AD9;
+        border-bottom: 3px solid $itemBorder1;
         text-transform: uppercase;
     }
 
@@ -232,12 +232,8 @@ export default {
 
     &__statsItem {
         border: 1px solid $itemBorder1;
-        text-align: center;
-        padding: 25px 30px;
+        @include section-item;
         max-width: 100%;
-        cursor: pointer;
-        border-radius: 15px;
-        box-shadow: #32325d40 0px 6px 12px -2px, #0000004d 0px 3px 7px -3px;
 
         &:hover {
             background: linear-gradient(-45deg, $linearPurple 0%, $linearBlue 100%);
@@ -275,7 +271,7 @@ export default {
         height: 100px;
         position: relative;
         border-radius: 20px;
-        box-shadow: #00000059 0px 5px 15px;
+        @include modal-shadow;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -315,52 +311,27 @@ export default {
 
     .thin {
         border-color: $unHealthy;
-        box-shadow: 0 0 .2rem $white,
-            0 0 .1rem $white,
-            0 0 1rem $unHealthy,
-            0 0 0.5rem $unHealthy,
-            0 0 1.8rem $unHealthy,
-            inset 0 0 0.3rem $unHealthy;
+        @include unhealthy-shadow;
     }
 
     .normal {
         border-color: $healthy;
-        box-shadow: 0 0 .2rem $white,
-            0 0 .1rem $white,
-            0 0 1rem $healthy,
-            0 0 0.5rem $healthy,
-            0 0 1.8rem $healthy,
-            inset 0 0 0.3rem $healthy;
+        @include healthy-shadow;
     }
 
     .slightlyFat {
         border-color: $slightlyFat;
-        box-shadow: 0 0 .2rem $white,
-            0 0 .1rem $white,
-            0 0 1rem $slightlyFat,
-            0 0 0.5rem $slightlyFat,
-            0 0 1.8rem $slightlyFat,
-            inset 0 0 0.3rem $slightlyFat;
+        @include fat-shadow;
     }
 
     .obese {
         border-color: $obese;
-        box-shadow: 0 0 .2rem $white,
-            0 0 .1rem $white,
-            0 0 1rem $obese,
-            0 0 0.5rem $obese,
-            0 0 1.8rem $obese,
-            inset 0 0 0.3rem $obese;
+        @include obese-shadow;
     }
 
     .extremelyObese {
         border-color: $unHealthy;
-        box-shadow: 0 0 .2rem $white,
-            0 0 .1rem $white,
-            0 0 1rem $unHealthy,
-            0 0 0.5rem $unHealthy,
-            0 0 1.8rem $unHealthy,
-            inset 0 0 0.3rem $unHealthy;
+        @include unhealthy-shadow;
     }
 
     .-active {

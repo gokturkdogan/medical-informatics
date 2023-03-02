@@ -32,7 +32,7 @@ export default {
     position: fixed;
     top: 100px;
     right: 0;
-    box-shadow: 0 8px 16px 0 $boxShadow1;
+    @include modal-shadow;
 
     &__content {
         display: flex;
