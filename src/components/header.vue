@@ -49,7 +49,7 @@ export default {
     position: fixed;
     width: 100%;
     padding: 20px 0;
-    box-shadow: 0 -6px 10px 5px $black;
+    @include header-shadow;
 
     &__logoLink {
         text-decoration: none;

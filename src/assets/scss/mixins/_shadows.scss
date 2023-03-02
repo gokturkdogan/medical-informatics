@@ -1,0 +1,45 @@
+@mixin modal-shadow {
+    box-shadow: #00000059 0 8px 16px 0;
+}
+
+@mixin header-shadow {
+    box-shadow: 0 -6px 10px 5px $black;
+}
+
+@mixin unhealthy-shadow {
+    box-shadow: 0 0 .2rem $white,
+        0 0 .1rem $white,
+        0 0 1rem $unHealthy,
+        0 0 0.5rem $unHealthy,
+        0 0 1.8rem $unHealthy,
+        inset 0 0 0.3rem $unHealthy;
+}
+
+@mixin healthy-shadow {
+    box-shadow: 0 0 .2rem $white,
+        0 0 .1rem $white,
+        0 0 1rem $healthy,
+        0 0 0.5rem $healthy,
+        0 0 1.8rem $healthy,
+        inset 0 0 0.3rem $healthy;
+}
+
+@mixin fat-shadow {
+    border-color: $slightlyFat;
+    box-shadow: 0 0 .2rem $white,
+        0 0 .1rem $white,
+        0 0 1rem $slightlyFat,
+        0 0 0.5rem $slightlyFat,
+        0 0 1.8rem $slightlyFat,
+        inset 0 0 0.3rem $slightlyFat;
+}
+
+@mixin obese-shadow {
+    border-color: $obese;
+    box-shadow: 0 0 .2rem $white,
+        0 0 .1rem $white,
+        0 0 1rem $obese,
+        0 0 0.5rem $obese,
+        0 0 1.8rem $obese,
+        inset 0 0 0.3rem $obese;
+}
