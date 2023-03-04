@@ -1,0 +1,16 @@
+@mixin headerXLarge {
+    @media (max-width: 1742px) { @content; }
+  }
+  @mixin headerLarge {
+    @media (max-width: 1600px) { @content; }
+  }
+  @mixin headerMedium {
+    @media (max-width: 1400px) { @content; }
+  }
+  @mixin headerSmall {
+    @media (max-width: 1245px) { @content; }
+  }
+
+  @mixin mobile {
+    @media (max-width: 990px) { @content; }
+  }

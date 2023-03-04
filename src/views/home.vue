@@ -26,8 +26,26 @@ export default {
     justify-content: space-between;
     padding: 34vh 20vw;
 
+    @include headerXLarge {
+        padding: 34vh 10vw;
+    }
+
+    @include mobile {
+        flex-direction: column-reverse;
+        padding: 15vh 20vw;
+    }
+
     &__information {
         padding-top: 100px;
+        margin: auto;
+
+        @include headerXLarge {
+            padding-top: 50px;
+        }
+
+        @include mobile {
+            max-width: 100%;
+        }
     }
 
     &__title {
@@ -35,6 +53,11 @@ export default {
         text-align: left;
         font-size: 22px;
         font-weight: 600;
+
+        @include mobile {
+            text-align: center;
+            font-size: 16px;
+        }
     }
 
     &__largeTitle {
@@ -42,6 +65,11 @@ export default {
         text-align: left;
         font-size: 65px;
         font-weight: 700;
+
+        @include mobile {
+            text-align: center;
+            font-size: 45px;
+        }
     }
 
     &__description {
@@ -50,6 +78,11 @@ export default {
         line-height: 1.6;
         letter-spacing: .3px;
         margin-bottom: 30px;
+
+        @include mobile {
+            text-align: center;
+            font-size: 14px;
+        }
     }
 
     &__buttons {
@@ -77,10 +110,25 @@ export default {
         &:hover {
             opacity: 70%;
         }
+
+        @include headerSmall {
+            padding: 15px 0;
+        }
+
+        @include mobile {
+            font-size: 12px;
+            min-width: 48%;
+        }
     }
 
     &__image {
         width: 635px;
+
+        @include mobile {
+            width: 100%;
+            margin-top: 50px;
+            margin: auto;
+        }
     }
 
     &__figure {

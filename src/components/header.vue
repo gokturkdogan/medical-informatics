@@ -6,32 +6,31 @@
                 <span class="header__title">HEALTHCARE</span>
             </div>
         </router-link>
+        <svg-icon class="header__mobileMenuIcon" icon-name="bars-icon" height="70" weight="70"></svg-icon>
         <nav class="header__navBar">
-            <div class="header__content">
-                <ul class="header__list">
-                    <li class="header__item">
-                        <router-link class="header__link" to="/" tag="a">Anasayfa</router-link>
-                    </li>
-                    <li class="header__item">
-                        <a class="header__link" href="#">İstatistiklerim</a>
-                        <div class="header__dropContent">
-                            <ul class="header__dropdown">
-                                <li><router-link class="header__dropLink" to="/health" tag="a">Sağlık</router-link></li>
-                                <li><a class="header__dropLink" href="">Antrenman Bilgilerim</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="header__item">
-                        <a class="header__link" href="#">Antrenman Programım</a>
-                    </li>
-                    <li class="header__item">
-                        <a class="header__link" href="#">Diyet Programım</a>
-                    </li>
-                    <li class="header__item">
-                        <a class="header__link" href="">Hesap Bilgilerim</a>
-                    </li>
-                </ul>
-            </div>
+            <ul class="header__list">
+                <li class="header__item">
+                    <router-link class="header__link" to="/" tag="a">Anasayfa</router-link>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="#">İstatistiklerim</a>
+                    <div class="header__dropContent">
+                        <ul class="header__dropdown">
+                            <li><router-link class="header__dropLink" to="/health" tag="a">Sağlık</router-link></li>
+                            <li><a class="header__dropLink" href="">Antrenman Bilgilerim</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="#">Antrenman Programım</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="#">Diyet Programım</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="">Hesap Bilgilerim</a>
+                </li>
+            </ul>
         </nav>
     </div>
 </template>
@@ -43,26 +42,50 @@ export default {
 <style lang="scss" scoped>
 .header {
     z-index: 1;
-    display: flex;
-    justify-content: center;
     background-color: $white;
     position: fixed;
-    width: 100%;
-    padding: 20px 0;
+    min-width: 64%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 18%;
+    padding-right: 18%;
+    padding-top: 10px;
+    padding-bottom: 10px;
     @include header-shadow;
+
+    @include headerXLarge {
+        min-width: 70%;
+        padding-left: 21%;
+        padding-right: 21%;
+    }
+
+    @include headerLarge {
+        min-width: 80%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    @include headerMedium {
+        min-width: 90%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    @include headerSmall {
+        min-width: 90%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
 
     &__logoLink {
         text-decoration: none;
     }
 
     &__logoArea {
-        width: 50px;
         display: flex;
+        width: 20%;
     }
 
-    &__logo {
-        width: 100%;
-    }
 
     &__title {
         font-weight: 900;
@@ -75,23 +98,34 @@ export default {
     }
 
     &__navBar {
-        width: 40%;
-        margin-left: 500px;
+        width: fit-content;
+        padding-top: 25px;
+
+        @include headerSmall {
+            display: none;
+        }
     }
 
-    &__content {
-        padding-top: 20px;
-        font-size: 14px;
+    &__mobileMenuIcon {
+        display: none;
+
+        @include headerSmall {
+            display: block;
+        }
     }
 
     &__list {
         display: flex;
-        justify-content: space-between;
         list-style-type: none;
+
     }
 
     &__item {
         text-transform: uppercase;
+
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
 
         &:hover .header__dropContent {
             display: block;

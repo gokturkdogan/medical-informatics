@@ -25,6 +25,26 @@
                     <a href="" class="footer__link"><svg-icon icon-name="instagram-icon" width="70" height="70"
                             fill="#8F40E8"></svg-icon></a>
                 </div>
+                <div class="footer__socialMobile">
+                    <a href="" class="footer__link"><svg-icon fill="#ffffff" icon-name="linkedln-icon" width="50"
+                            height="50"></svg-icon></a>
+                    <a href="" class="footer__link"><svg-icon icon-name="github-icon" width="50" height="50"
+                            fill="#8F40E8"></svg-icon></a>
+                    <a href="" class="footer__link"><svg-icon icon-name="twitter-icon" width="50" height="50"
+                            fill="#8F40E8"></svg-icon></a>
+                    <a href="" class="footer__link"><svg-icon icon-name="instagram-icon" width="50" height="50"
+                            fill="#8F40E8"></svg-icon></a>
+                </div>
+                <div class="footer__socialMobileSmall">
+                    <a href="" class="footer__link"><svg-icon fill="#ffffff" icon-name="linkedln-icon" width="30"
+                            height="30"></svg-icon></a>
+                    <a href="" class="footer__link"><svg-icon icon-name="github-icon" width="30" height="30"
+                            fill="#8F40E8"></svg-icon></a>
+                    <a href="" class="footer__link"><svg-icon icon-name="twitter-icon" width="30" height="30"
+                            fill="#8F40E8"></svg-icon></a>
+                    <a href="" class="footer__link"><svg-icon icon-name="instagram-icon" width="30" height="30"
+                            fill="#8F40E8"></svg-icon></a>
+                </div>
             </div>
         </div>
         <div class="footer__bottom">
@@ -41,11 +61,20 @@ export default {
 .footer {
     background-color: $footerBg;
     padding: 10vh 15vw;
-    margin-top: 200px;
+    margin-top: 5px;
+
+    @include mobile {
+        padding: 5vh 15vw;
+    }
 
     &__top {
         display: flex;
         justify-content: space-between;
+
+        @include mobile {
+            flex-direction: column;
+            justify-content: center;
+        }
     }
 
     &__item {
@@ -74,6 +103,10 @@ export default {
         list-style-type: none;
         color: $white;
 
+        @include mobile {
+            text-align: center;
+        }
+
         li {
             margin-top: 20px;
             font-weight: 500;
@@ -86,6 +119,36 @@ export default {
         display: flex;
         width: 100%;
         justify-content: space-between;
+
+        @include headerMedium {
+            display: none;
+        }
+    }
+
+    &__socialMobile {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        display: none;
+
+        @include headerMedium {
+            display: flex;
+        }
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    &__socialMobileSmall {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        display: none;
+
+        @include mobile {
+            display: flex;
+        }
     }
 
     &__link {
@@ -95,6 +158,11 @@ export default {
 
         &:hover {
             @include unhealthy-shadow
+        }
+
+        @include mobile {
+            margin-top: 40px;
+            padding: 10px;
         }
     }
 }
