@@ -187,6 +187,15 @@ export default {
         margin-top: 100px;
         text-align: center;
         padding: 0 300px;
+        margin-bottom: 200px;
+
+        @include headerMedium {
+            padding: 0 100px;
+        }
+
+        @include mobile {
+            padding: 0;
+        }
     }
 
     &__stats {
@@ -204,6 +213,10 @@ export default {
         font-weight: 700;
         border-bottom: 3px solid $itemBorder1;
         text-transform: uppercase;
+
+        @include mobile {
+            font-size: 20px;
+        }
     }
 
     &__statsContent {
@@ -214,6 +227,10 @@ export default {
         display: flex;
         justify-content: space-between;
 
+        @include mobile {
+            flex-direction: column;
+        }
+
         &:not(:first-child) {
             margin-top: 30px;
         }
@@ -223,11 +240,24 @@ export default {
         display: flex;
         justify-content: center;
         margin-top: 30px;
+
+        @include headerLarge {
+            font-size: 14px;
+            margin-top: 100px;
+        }
+
+        @include mobile {
+            margin-top: 30px;
+        }
     }
 
     &__view {
         max-width: 30%;
         height: 460px;
+
+        @include mobile {
+            max-width: 100%;
+        }
     }
 
     &__statsItem {
@@ -235,13 +265,17 @@ export default {
         @include section-item;
         max-width: 100%;
 
+        @include mobile {
+            max-width: 70%;
+            margin: auto;
+            height: fit-content;
+        }
+
         &:hover {
             background: linear-gradient(-45deg, $linearPurple 0%, $linearBlue 100%);
             color: $white;
         }
     }
-
-
 
     &__statsItemTitle {
         margin-top: 30px;
@@ -252,17 +286,29 @@ export default {
         letter-spacing: .2px;
         text-transform: capitalize;
 
+        @include headerSmall {
+            font-size: 16px;
+        }
+
     }
 
     &__statsItemDesc {
         font-size: 15px;
         line-height: 1.7;
         margin-bottom: 30px;
+
+        @include headerSmall {
+            font-size: 13px;
+        }
     }
 
     &__statsItemValue {
         font-weight: 700;
         font-size: 45px;
+
+        @include headerSmall {
+            font-size: 35px;
+        }
     }
 
     &__updateModal {
@@ -276,6 +322,12 @@ export default {
         justify-content: center;
         align-items: center;
         border: 1px solid $itemBorder1;
+
+        @include mobile {
+            max-width: 85%;
+            margin: auto;
+            margin-top: 10px;
+        }
     }
 
     &__updateInput {
@@ -285,6 +337,18 @@ export default {
         font-size: 40px;
         border-radius: 10px;
         margin-right: 15px;
+
+        @include headerXLarge {
+            width: 80px;
+            font-size: 25px;
+            margin-right: 10px;
+        }
+
+        @include headerLarge {
+            width: 70px;
+            font-size: 22px;
+            margin-right: 5px;
+        }
     }
 
     &__updateBtn {
@@ -300,6 +364,15 @@ export default {
 
         &:hover {
             background: $linearBlue;
+        }
+
+        @include headerXLarge {
+            padding: 10px 15px;
+        }
+
+        @include headerLarge {
+            font-size: 14px;
+            padding: 10px 10px;
         }
     }
 
