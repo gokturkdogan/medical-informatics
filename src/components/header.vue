@@ -17,7 +17,7 @@
                     <div class="header__dropContent">
                         <ul class="header__dropdown">
                             <li><router-link class="header__dropLink" to="/health" tag="a">Sağlık</router-link></li>
-                            <li><a class="header__dropLink" href="">Antrenman Bilgilerim</a></li>
+                            <li><router-link class="header__dropLink" to="/training" tag="a">Antrenman Bilgilerim</router-link></li>  
                         </ul>
                     </div>
                 </li>
